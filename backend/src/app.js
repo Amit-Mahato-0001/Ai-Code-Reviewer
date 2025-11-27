@@ -8,7 +8,7 @@ const allowedOrigins = [
   "http://localhost:5173",   // vite
   "http://localhost:3000",
   "http://127.0.0.1:5173",
-  "https://ai-based-code-reviewer-gyh8wwqnf-amit-mahato-0001s-projects.vercel.app"
+  "https://ai-code-reviewer-delta-puce.vercel.app"
 ];
 
 app.use(cors({
