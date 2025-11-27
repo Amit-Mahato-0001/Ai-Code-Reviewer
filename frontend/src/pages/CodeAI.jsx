@@ -7,7 +7,7 @@ import Markdowns from "../Components/Markdown";
 // ------------------------
 // CENTRALIZED BACKEND URL
 // ------------------------
-const BASE_URL = "https://ai-based-code-reviewer-8fr5.onrender.com";
+const BASE_URL = "https://ai-code-reviewer-xp9z.onrender.com";
 
 function CodeAI() {
   const [code, setCode] = useState("");
