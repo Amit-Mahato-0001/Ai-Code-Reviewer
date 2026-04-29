@@ -7,7 +7,7 @@ import Markdowns from "../Components/Markdown";
 // ------------------------
 // CENTRALIZED BACKEND URL
 // ------------------------
-const BASE_URL = "https://ai-code-reviewer-xp9z.onrender.com";
+const BASE_URL = "https://ai-based-code-reviewer-8fr5.onrender.com";
 
 function CodeAI() {
   const [code, setCode] = useState("");
@@ -18,6 +18,12 @@ function CodeAI() {
   const responseAreaRef = useRef(null);
 
   const handleSubmit = async () => {
+    if (!code.trim()) {
+      setDisplay(true);
+      setResponse("Please enter some code first.");
+      return;
+    }
+
     if (responseAreaRef.current) {
       responseAreaRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -27,10 +33,16 @@ function CodeAI() {
 
     try {
       const res = await axios.post(`${BASE_URL}/api/ai/get-response`, { code });
-      setResponse(res.data);
-      setLoading(false);
+      setResponse(res.data.response);
     } catch (error) {
       console.error("Failed to get response:", error);
+      setResponse(
+        error.response?.data?.details ||
+          error.response?.data?.error ||
+          error.message ||
+          "Failed to get response from the AI model."
+      );
+    } finally {
       setLoading(false);
     }
   };
@@ -39,11 +51,11 @@ function CodeAI() {
     <div className="w-full min-h-screen relative overflow-hidden bg-[#03070F] text-white">
 
       {/* Blue Gradient Glow Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#041026] via-[#082A5A] to-[#03070F]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#2B0A02] via-[#FF6A00] to-[#2B0A02]"></div>
 
       {/* Center Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full 
-      bg-[#1B4FFF]/40 blur-[160px] opacity-50"></div>
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full
+      bg-[#FF7A1B]/40 blur-[160px] opacity-50"></div>
 
       <Navbar />
 
@@ -61,7 +73,7 @@ function CodeAI() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-center text-[#C9D1D9] mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
+        <p className="text-center mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
           The Gemini engine catches syntax mistakes, logic flaws, and security risks in seconds - so you can focus on building. Fast, accurate, and built for modern developers who want clean, production-ready code every time.
         </p>
 
@@ -91,7 +103,7 @@ function CodeAI() {
           </button>
         </div>
 
-        <p className="text-sm text-center text-[#8B949E] mt-2">
+        <p className="text-sm text-center mt-2">
           If you find this project helpful, consider giving it a star on GitHub and sharing your feedback — it really helps us improve.
         </p>
       </div>

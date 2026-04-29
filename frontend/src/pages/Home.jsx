@@ -3,19 +3,19 @@ import Navbar from "../Components/Navbar";
 
 function Home() {
   return (
-    <div className="w-full min-h-screen relative overflow-hidden bg-[#03070F] text-white">
+    <div className="w-full min-h-screen relative overflow-hidden bg-[#0F0503] text-white">
 
-      {/* Blue Gradient Glow Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#041026] via-[#082A5A] to-[#03070F]"></div>
+      {/* Orange Gradient Glow Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#2B0A02] via-[#FF6A00] to-[#2B0A02]"></div>
 
       {/* Center Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full 
-      bg-[#1B4FFF]/40 blur-[160px] opacity-50"></div>
+      bg-[#FF7A1B]/40 blur-[160px] opacity-50"></div>
 
       <Navbar />
 
       {/* Top Strip */}
-      <div className="w-full py-2 bg-[#0095FF] text-center mt-20">
+      <div className="w-full py-2 bg-[#FF8C1A] text-center mt-20">
         <p className="text-[12px] md:text-sm font-medium tracking-tight">
           Supports JavaScript, Python, React and more! 🚀
         </p>
@@ -30,10 +30,10 @@ function Home() {
         </div>
 
         <h1 className="text-4xl md:text-7xl text-center tracking-tight leading-tight">
-          Ai Code Reviewer
+          Hex Gen Ai Code Reviewer
         </h1>
 
-        <p className="text-center text-[#C9D1D9] mt-4 max-w-2xl text-sm md:text-base leading-relaxed">
+        <p className="text-center mt-4 max-w-2xl text-sm md:text-base leading-relaxed">
           Analyzes each line, detecting hidden errors, refining structure, and enhancing readability. Everything works together to maintain quality, speed, and consistency across your workflow.
         </p>
 
@@ -49,7 +49,7 @@ function Home() {
 
         {/* Code Block (Fake Terminal) */}
         <div className="mt-16 w-[70%] md:w-[45%] bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-2xl">
-          <pre className="text-[#C9D1D9] text-sm leading-relaxed whitespace-pre-wrap">
+          <pre className="text-[#F2C2A8] text-sm leading-relaxed whitespace-pre-wrap">
 {`> npm install @nextgen/code-reviewer
 > Initializing AI engine...
 > Scanning codebase: 42 files found
@@ -67,7 +67,7 @@ function Home() {
         </div>
       </div>
 
-      <p className="text-center text-[#8B949E] mt-10 mb-6 text-sm">
+      <p className="text-center text-[#BFA08F] mt-10 mb-6 text-sm">
         Powered by Gemini <i className="ri-gemini-fill"></i>
       </p>
     </div>
