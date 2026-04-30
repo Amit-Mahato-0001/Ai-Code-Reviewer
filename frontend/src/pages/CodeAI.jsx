@@ -7,7 +7,7 @@ import Markdowns from "../Components/Markdown";
 // ------------------------
 // CENTRALIZED BACKEND URL
 // ------------------------
-const BASE_URL = "https://ai-based-code-reviewer-8fr5.onrender.com";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 function CodeAI() {
   const [code, setCode] = useState("");
@@ -74,7 +74,7 @@ function CodeAI() {
 
         {/* Subtitle */}
         <p className="text-center mt-3 max-w-2xl text-sm md:text-base leading-relaxed">
-          The Gemini engine catches syntax mistakes, logic flaws, and security risks in seconds - so you can focus on building. Fast, accurate, and built for modern developers who want clean, production-ready code every time.
+          The Groq engine catches syntax mistakes, logic flaws, and security risks in seconds - so you can focus on building. Fast, accurate, and built for modern developers who want clean, production-ready code every time.
         </p>
 
         {/* Code Input Box */}

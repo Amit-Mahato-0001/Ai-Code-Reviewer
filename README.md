@@ -27,7 +27,7 @@ AI Code Reviewer helps developers identify bugs, improve code readability, and g
 
 ### Backend
 - Node.js + Express
-- OpenAI / Gemini API
+- Groq API
 - CORS setup
 - Error handling middleware
 
@@ -36,13 +36,14 @@ AI Code Reviewer helps developers identify bugs, improve code readability, and g
 ## ⚙️ Setup Instructions
 
 ### Backend Setup
-1. Go to the server folder  
-2. Run: cd server  
+1. Go to the backend folder  
+2. Run: cd backend  
 3. Run: npm install  
-4. Run: node server.js 
+4. Run: npm start 
 
 Create a .env file with:
-GOOGLE_GENERATIVE_AI_API_KEY=your_openai_gemini_key
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL=llama-3.3-70b-versatile
 
 ### Frontend Setup
 1. Go to the frontend folder  
@@ -50,12 +51,16 @@ GOOGLE_GENERATIVE_AI_API_KEY=your_openai_gemini_key
 3. Run: npm install  
 4. Run: npm run dev  
 
+For local development, the frontend uses http://localhost:5000 by default.
+For deployment, add this environment variable in your frontend host:
+VITE_API_BASE_URL=your_render_deploy_url
+
 ---
 
 ## 🌐 Environment Setup
 
-Update backend URL in your frontend:
-const BASE_URL =your_render_deploy_url
+Update backend URL in your frontend host:
+VITE_API_BASE_URL=your_render_deploy_url
 
 Make sure the frontend Axios URL matches your deployed backend endpoint.
 

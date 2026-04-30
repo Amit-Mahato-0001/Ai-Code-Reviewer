@@ -50,7 +50,7 @@ function Home() {
         {/* Code Block (Fake Terminal) */}
         <div className="mt-16 w-[70%] md:w-[45%] bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-2xl">
           <pre className="text-[#F2C2A8] text-sm leading-relaxed whitespace-pre-wrap">
-{`> npm install @nextgen/code-reviewer
+{`> npm install @hexgen/code-reviewer
 > Initializing AI engine...
 > Scanning codebase: 42 files found
 > -----------------------------------------
@@ -68,7 +68,7 @@ function Home() {
       </div>
 
       <p className="text-center text-[#BFA08F] mt-10 mb-6 text-sm">
-        Powered by Gemini <i className="ri-gemini-fill"></i>
+        Powered by Groq
       </p>
     </div>
   );
